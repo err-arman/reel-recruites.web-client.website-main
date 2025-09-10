@@ -1,0 +1,27 @@
+@mixin light {
+  [data-mantine-color-scheme="light"] & {
+    @content;
+  }
+}
+
+@mixin dark {
+  [data-mantine-color-scheme="dark"] & {
+    @content;
+  }
+}
+
+.text-link {
+  color: $dark1;
+  @include dark {
+    color: #d1d9e1;
+  }
+}
+
+// .app-bg-100 {
+//   @include dark {
+//     background-color: $dark;
+//   }
+//   @include light {
+//     background-color: white;
+//   }
+// }

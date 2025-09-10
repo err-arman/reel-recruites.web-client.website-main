@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        VITE_APP_URL: https://www.reel-recruits.com
+        VITE_API: https://api.reel-recruits.com
+        VITE_STORAGE_API: https://api.reel-recruits.com/storage
+        VITE_STORAGE_VIDEO_API: https://api.reel-recruits.com/storage/video
+        VITE_PORTAL_URL: https://portal.reel-recruits.com
+    ports:
+      - "3001:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

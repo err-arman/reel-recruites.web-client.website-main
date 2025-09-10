@@ -1,0 +1,191 @@
+@import "variables";
+@import "utils";
+@import "header";
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+
+$dark: "#0a0f13";
+
+@layer tailwind {
+  @tailwind base;
+}
+@tailwind components;
+@tailwind utilities;
+
+body,
+p {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --mantine-color-body: #0a0f13 !important;
+}
+
+.auth-layout-right {
+  background-image: url("/images/auth-banner.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.wrapper {
+  max-width: 1170px;
+  margin: auto;
+  @apply px-4;
+}
+
+.job-card .video-js {
+  width: 100% !important;
+}
+
+.profile-video-card .video-js {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+.footer-bg-one {
+  background-image: url("/images/footer-1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 20;
+}
+.footer-bg-two {
+  background-image: url("/images/footer-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* position: absolute;
+  top: 80px;
+  right: 0; */
+}
+
+.footer-wrapper {
+  .text-link {
+    color: #d1d9e1;
+  }
+}
+.text-link {
+  color: #d1d9e1;
+}
+
+/* job seeker profile */
+.job-profile-bg {
+  background-color: $primaryColor;
+}
+
+.job-profile-cover {
+  background-image: url("/images/job-profile/job-seeker-cover.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.profile-video-bg {
+  background-image: url("/images/job-profile/videos.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+//job-list
+
+.job-list-bg {
+  background-color: $dark2;
+}
+.job-select-bg {
+  background: #141a20;
+}
+.job-list-card-bg {
+  background-color: #18232f;
+}
+
+//home-page
+.home-bg-banner {
+  background-image: url("/images/home/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  height: calc(100vh - 70px);
+}
+.primary-bg {
+  background-color: $dark2;
+}
+
+.choose-bg-image1 {
+  background-image: url("/images/home/home-choose1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.choose-bg-image2 {
+  background-image: url("/images/home/home-choose2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.choose-bg-image3 {
+  background-image: url("/images/home/home-choose3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.video-play-color {
+  background-color: #151517;
+}
+
+/* job details */
+// .job-details-bg {
+// 	background-image: url('/images/job-details/job-details-bg.jpg');
+// 	background-size: cover;
+// 	background-repeat: no-repeat;
+// }
+.job-details-mini-bg {
+  @apply flex flex-col gap-2 p-5 mb-5 rounded;
+  @apply dark:bg-[#18232F] shadow;
+}
+
+/* job apply */
+
+.job-apply-card-bg {
+  @apply dark:bg-[#18232F];
+  @apply bg-white shadow-md;
+  @apply dark:text-[#d1d9e1] text-black;
+}
+
+.outline-button {
+  @apply text-center;
+  @apply py-[10px] px-7;
+  @apply rounded-md;
+  @apply border-solid dark:text-white text-dark hover:text-white dark:hover:text-night-500;
+  @apply dark:border-white border-dark;
+  @apply dark:hover:bg-white hover:bg-night-500;
+  @apply transition-all duration-300;
+
+  border: 2px solid $dark2;
+}
+
+.vjs-theme-forest .vjs-big-play-button {
+  background: url("/icons/play.svg") !important;
+  margin-left: -50px !important;
+}
+
+//swiper
+.swiper-pagination {
+  bottom: -100px;
+}
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #007aff;
+  opacity: 1;
+  background: #888;
+  margin-bottom: -100px;
+}
+
+.swiper-pagination-bullet-active {
+  color: #007aff;
+  background: #007aff;
+}
+
+.graphland-dev-InputWrapper-error {
+  font-size: 14px;
+  margin-top: 8px;
+}
