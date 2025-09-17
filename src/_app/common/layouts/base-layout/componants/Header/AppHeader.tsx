@@ -74,7 +74,7 @@ const AppHeader = () => {
               <AuthProfileDropdown />
             ) : (
               <div className="flex items-center gap-3">
-                <Link className="block outline-button" to={`${import.meta.env.VITE_SSO_SERVER_URL}/register?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`}>
+                <Link className="block outline-button" to={`${import.meta.env.VITE_SSO_SERVER_URL}/login?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`}>
                   Login
                 </Link>
                 <Link to={`${import.meta.env.VITE_SSO_SERVER_URL}/register?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`} className="block outline-button">
