@@ -66,8 +66,8 @@ const RecentJobSection: React.FC<{ companyId: string }> = ({ companyId }) => {
       </div>
 
       <div className="flex flex-col gap-6 p-5 my-10 bg-gray-100 rounded dark:bg-night-600">
-        {companyJob?.jobs__public.nodes?.map((job) => (
-          <RecentJobCard job={job} />
+        {companyJob?.jobs__public.nodes?.map((job, index) => (
+          <RecentJobCard job={job} key={index} />
         ))}
       </div>
     </div>

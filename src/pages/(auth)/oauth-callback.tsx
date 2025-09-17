@@ -1,9 +1,10 @@
 import { getGqlErrorMessage } from "@/_app/utils/gql-errors";
+import { initiateSSoLogin } from "@/_app/utils/sso-auth";
 import { gql, useMutation } from "@apollo/client";
 import { LoadingOverlay } from "@mantine/core";
 import { showNotification } from "@mantine/notifications";
 import { useEffect } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const OAUTH_LOGIN = gql`
   mutation OauthLogin($input: OAuthLoginInput!) {
@@ -16,20 +17,19 @@ const OAUTH_LOGIN = gql`
 
 const OAuthCallback = () => {
   const params = useParams<{ provider: string }>();
-  const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const code = searchParams.get("code");
   const state = searchParams.get("state");
 
   const [oauthLoginMutation] = useMutation(OAUTH_LOGIN, {
     onCompleted(data) {
-      if (
-        data.oauthLogin.roles.includes("ADMIN") ||
-        data.oauthLogin.roles.includes("RECRUITER")
-      ) {
-        window.location.href = `https://portal.reel-recruits.com/direct-login?access-token=${data?.getTokenByFirebaseIdToken?.accessToken}`;
-        return;
-      }
+      // if (
+      //   data.oauthLogin.roles.includes("ADMIN") ||
+      //   data.oauthLogin.roles.includes("RECRUITER")
+      // ) {
+      //   window.location.href = `${import.meta.env.VITE_PORTAL_URL}/direct-login?access-token=${data?.getTokenByFirebaseIdToken?.accessToken}`;
+      //   return;
+      // }
       localStorage.setItem("accessToken", data.oauthLogin.accessToken);
 
       // check if there is any redirect url
@@ -45,7 +45,7 @@ const OAuthCallback = () => {
       }
     },
     onError(error) {
-      navigate("/auth/signup");
+      initiateSSoLogin();
       showNotification({
         title: getGqlErrorMessage(error),
         message: "",

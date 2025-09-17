@@ -27,7 +27,7 @@ const ResponsiveDrawerMenu = () => {
         <div className="flex flex-col gap-4">
           <Button
             component={Link}
-            to={"/auth/signin"}
+            to={`${import.meta.env.VITE_SSO_SERVER_URL}/login?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`}
             size="compact-md"
             variant="outline"
             color="gray"
@@ -37,7 +37,7 @@ const ResponsiveDrawerMenu = () => {
           </Button>
           <Button
             component={Link}
-            to={"/auth/signup"}
+            to={`${import.meta.env.VITE_SSO_SERVER_URL}/register?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`}
             size="compact-sm"
             variant="white"
             color="dark"

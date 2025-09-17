@@ -19,7 +19,9 @@ const AuthProfileDropdown = () => {
       cancelLabel: "Stay logged in",
       onConfirm() {
         localStorage.removeItem("accessToken");
-        window.location.href = "/auth/signin";
+        window.location.href = `${
+          import.meta.env.VITE_APP_URL
+        }`;
       },
     });
   };

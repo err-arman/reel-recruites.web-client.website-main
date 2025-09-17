@@ -74,10 +74,10 @@ const AppHeader = () => {
               <AuthProfileDropdown />
             ) : (
               <div className="flex items-center gap-3">
-                <Link className="block outline-button" to={"/auth/signin"}>
+                <Link className="block outline-button" to={`${import.meta.env.VITE_SSO_SERVER_URL}/register?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`}>
                   Login
                 </Link>
-                <Link to={"/auth/signup"} className="block outline-button">
+                <Link to={`${import.meta.env.VITE_SSO_SERVER_URL}/register?token=${import.meta.env.VITE_SSO_TOKEN}&redirect_url=${import.meta.env.VITE_SSO_REDIRECT_URL}`} className="block outline-button">
                   Register Now
                 </Link>
               </div>

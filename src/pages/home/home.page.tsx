@@ -76,7 +76,10 @@ const HomePage = () => {
                   I&apos;m Looking for a job
                 </Link>
 
-                <Link className="outline-button" to={"/auth/signup"}>
+                <Link
+                  className="outline-button"
+                  to={`${import.meta.env.VITE_RECRUITER_URL}`}
+                >
                   I Want to Hire
                 </Link>
               </div>

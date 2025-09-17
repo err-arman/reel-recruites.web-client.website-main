@@ -14,6 +14,7 @@ import InterviewOnBoarding from "./submit-video-interview/components/InterviewOn
 import VideoInterviewProcess from "./submit-video-interview/components/VideoInterviewProcess";
 import TestPage from "./test.page";
 import { RouterGuard } from "@/_app/guards/RouterGuard";
+import CallbackPage from "./(auth)/callback/callback.page";
 
 export const publicRouter: RouteObject[] = [
   {
@@ -51,6 +52,10 @@ export const publicRouter: RouteObject[] = [
       {
         path: "/jobs",
         children: jobRouter,
+      },
+      {
+        path: "/callback",
+        element: <CallbackPage />,
       },
       {
         path: "/interview-recording",
